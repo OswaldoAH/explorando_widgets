@@ -30,6 +30,10 @@ class HomePageTemp extends StatelessWidget {
         children: <Widget>[
           ListTile(
             title: Text('$opcion!'),
+            subtitle: Text('Algo'),
+            leading: Icon(Icons.account_box),
+            trailing: Icon(Icons.arrow_right),
+            onTap: () {},
           ),
           Divider(),
         ],

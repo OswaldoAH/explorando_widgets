@@ -1,7 +1,7 @@
+import 'package:app_ejemplo_widgets/src/Utils/icon_string_util.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_ejemplo_widgets/src/providers/menu_provider.dart';
-
 
 class HomePage extends StatelessWidget {
   @override
@@ -15,10 +15,6 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _lista() {
-    // menuProvider.cargarData().then((opciones){
-    //   print('_lista');
-    //   print(opciones);
-    // });
     return FutureBuilder(
       future: menuProvider.cargarData(),
       initialData: [],
@@ -28,7 +24,6 @@ class HomePage extends StatelessWidget {
         );
       },
     );
-    
   }
 
   List<Widget> _crearLista(List<dynamic> data) {
@@ -36,14 +31,11 @@ class HomePage extends StatelessWidget {
     data.forEach((opt) {
       final widgetTemp = ListTile(
         title: Text(opt['texto']),
-        leading: Icon(Icons.add, color: Colors.blue,),
+        leading: getIcon(opt['icon']),
         trailing: Icon(Icons.arrow_right),
-        onTap: () {
-          
-        },
+        onTap: () {},
       );
-      opciones..add(widgetTemp)
-              ..add(Divider());
+      opciones..add(widgetTemp)..add(Divider());
     });
     return opciones;
   }

@@ -15,6 +15,8 @@ class CardPage extends StatelessWidget {
           ),
           children: <Widget>[
             _cardTipo1(),
+            SizedBox(height: 30.0,),
+            _cardTipo2(),
           ],
         ),
       ),
@@ -44,6 +46,24 @@ class CardPage extends StatelessWidget {
               FlatButton(onPressed: () {}, child: Text('Aceptar')),
             ],
           )
+        ],
+      ),
+    );
+  }
+
+  Widget _cardTipo2() {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          FadeInImage(
+            image: NetworkImage('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjI0MX0&w=1000&q=80'),
+            placeholder: AssetImage('assets/Loading.gif'),
+            fadeInDuration: Duration(milliseconds: 300),
+            height: 250.0,
+            fit: BoxFit.cover,
+          ),
+          
+          Container(padding: EdgeInsets.symmetric(vertical: 8), child: Text('Algo')),
         ],
       ),
     );
